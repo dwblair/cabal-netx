@@ -25,7 +25,7 @@ Then, open `_site/index.html` in a browser.
 
 ## Credits
 
-Cabal-netx leverages the awesome [headless.js](https://github.com/cblgh/cabal-crepes/blob/master/headless.js) code in [cabal-crepes](https://github.com/cblgh/cabal-crepes) by [cblgh](https://github.com/cblgh). 
+[cabal-netx](https://github.com/dwblair/cabal-netx) leverages the awesome [headless.js](https://github.com/cblgh/cabal-crepes/blob/master/headless.js) code in [cabal-crepes](https://github.com/cblgh/cabal-crepes) by [cblgh](https://github.com/cblgh). 
 
 The socket-related code s adapted from the tutorial [here](https://github.com/processing/p5.js/wiki/p5.js,-node.js,-socket.io
 )
