@@ -2,7 +2,7 @@
 
 <img src="./network.png">
 
-A simple network visualization of cabal peer networks.
+A simple network visualization of [cabal](https://cabal.chat/) peer networks.
 
 ## Installation
 
