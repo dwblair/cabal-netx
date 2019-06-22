@@ -4,9 +4,13 @@
 
 A simple network visualization of cabal peer networks.
 
+## Installation
+
 `npm install`
 
-Run the peer sockets server using:
+## Usage
+
+First, the peer sockets server using:
 
 `node node peersocket.js --cabal [cabal key]`
 
@@ -17,17 +21,13 @@ chmod a+x invoke.sh
 ./invoke.sh
 ```
 
+Then, open `_site/index.html` in a browser.
 
+## Credits
 
- that leverages the awesome [headless.js](https://github.com/cblgh/cabal-crepes/blob/master/headless.js) code in [cabal-crepes](https://github.com/cblgh/cabal-crepes) by [cblgh](https://github.com/cblgh). 
+Cabal-netx leverages the awesome [headless.js](https://github.com/cblgh/cabal-crepes/blob/master/headless.js) code in [cabal-crepes](https://github.com/cblgh/cabal-crepes) by [cblgh](https://github.com/cblgh). 
 
-This code is based on web socket code adapted from the tutorial [here](https://github.com/processing/p5.js/wiki/p5.js,-node.js,-socket.io
+The socket-related code s adapted from the tutorial [here](https://github.com/processing/p5.js/wiki/p5.js,-node.js,-socket.io
 )
-https://github.com/processing/p5.js/wiki/p5.js,-node.js,-socket.io
 
-using https://github.com/fkling/JSNetworkX
-
-The headless module from https://github.com/cblgh/cabal-crepes
-
-
-
+And the network visualization code is from the fantastic [jsnetworks](https://github.com/fkling/JSNetworkX) library.
