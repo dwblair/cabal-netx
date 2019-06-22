@@ -1,0 +1,93 @@
+
+
+<html>
+  <head>
+	  <!--    <script language="javascript" type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.2.9/p5.min.js"></script> -->
+    <!--<script language="javascript" type="text/javascript" src="sketch.js"></script>-->
+    <script language="javascript" type="text/javascript" src="scripts/socket.io-1.4.5.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="scripts/jsnetworkx.js"></script>
+  </head>
+  <body>
+	  
+	  <div id="canvas"></div>
+<script type="text/javascript">
+	
+	
+	// using https://github.com/fkling/JSNetworkX
+	var socket;
+var peerList=new Set();
+
+//peerList.add("toodles");
+    var color = d3.scale.category20();
+    var options = {
+        element: '#canvas',
+        withLabels: true, 
+        height: 300,
+        width:600,
+        layoutAttr: {
+            charge: -120,
+            linkDistance: 80
+        },
+        nodeAttr: {
+            r: 20,
+            title: function(d) { return d.label;}
+        },
+        nodeStyle: {
+            fill: function(d) { 
+                return color(d.data.group); 
+            },
+            stroke: 'none'
+        },
+        labelStyle: {fill: 'white'},
+        edgeStyle: {
+            fill: '#999'
+        }
+    }
+    
+ var G = new jsnx.Graph();
+var nodeNum = 1;
+var local_node;
+var got_local=false;
+
+socket = io.connect('http://localhost:8899');
+socket.on('peer',
+  
+    function(info) {
+	    
+
+	    local_node=info.local_key.substr(0, 3); 	
+	    if(got_local==false) {
+	    G.addNodesFrom([local_node],{group:1});
+	    jsnx.draw(G, options); 
+	    got_local=true;
+	    }
+
+		peer = info.peer.substr(0, 3);
+	   
+	    if (peerList.has(peer)==false) {
+			
+	    peerList.add(peer);
+
+
+	    G.addNode(peer,{group:0});
+	
+		//console.log(G.nodes[peer])
+	
+
+peerList.forEach(function(i) {
+	G.addEdgesFrom([[local_node,i],[i,local_node]]);
+});
+jsnx.draw(G, options); 
+}
+
+     
+
+
+
+});
+
+    </script>
+
+  </body>
+</html>
