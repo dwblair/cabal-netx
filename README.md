@@ -27,7 +27,7 @@ Then, open `_site/index.html` in a browser.
 
 [cabal-netx](https://github.com/dwblair/cabal-netx) leverages:
 
-- the awesome [headless.js](https://github.com/cblgh/cabal-crepes/blob/master/headless.js) code in [cabal-crepes](https://github.com/cblgh/cabal-crepes) by [cblgh](https://github.com/cblgh), in order to connect to a cabal;
+- the awesome [`cabal-headless`](https://github.com/cabal-club/cabal-headless) code from [cabal-crepes](https://github.com/cblgh/cabal-crepes) by [cblgh](https://github.com/cblgh), in order to connect to a cabal;
 
 - the tutorial [here](https://github.com/processing/p5.js/wiki/p5.js,-node.js,-socket.io
 ) for web-socket code;

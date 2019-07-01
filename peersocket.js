@@ -1,7 +1,7 @@
 // Based off of Shawn Van Every's Live Web
 // http://itp.nyu.edu/~sve204/liveweb_fall2013/week3.html
 
-var Headless = require('./headless')
+var Headless = require('cabal-headless')
 var minimist = require("minimist")
 var argv = minimist(process.argv.slice(2))
 
