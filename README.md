@@ -10,9 +10,9 @@ A simple network visualization of [cabal](https://cabal.chat/) peer networks.
 
 ## Usage
 
-First, the peer sockets server using:
+First, run the peer sockets server using:
 
-`node node peersocket.js --cabal [cabal key]`
+`node peersocket.js --cabal [cabal key]`
 
 Or use the included script:
 
